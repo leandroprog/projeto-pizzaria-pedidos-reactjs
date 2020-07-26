@@ -5,7 +5,10 @@ export const Container = styled.div`
   padding: 20px;
 `
 
-export const GitHubButton = styled(Button)`
+export const GitHubButton = styled(Button).attrs({
+  variant: 'contained',
+  fullWidth: true
+})`
   && {
     font-size: 20px;
     padding: 15px;

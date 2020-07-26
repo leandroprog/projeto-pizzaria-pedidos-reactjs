@@ -12,7 +12,7 @@ const Login = () => (
         <Logo style={{ width: '100%' }} />
       </Grid>
       <Grid item xs={12}>
-        <GitHubButton variant='contained' fullWidth>Entrar com GitHub</GitHubButton>
+        <GitHubButton>Entrar com GitHub</GitHubButton>
       </Grid>
     </Grid>
   </Container>
