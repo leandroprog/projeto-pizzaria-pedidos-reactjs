@@ -11,7 +11,7 @@ const Login = () => (
       <Grid item>
         <Logo style={{ width: '100%' }} />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} container justify='center'>
         <GitHubButton>Entrar com GitHub</GitHubButton>
       </Grid>
     </Grid>

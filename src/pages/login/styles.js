@@ -10,7 +10,8 @@ export const GitHubButton = styled(Button).attrs({
   fullWidth: true
 })`
   && {
-    font-size: 20px;
+    font-size: 25px;
+    max-width: 427px;
     padding: 15px;
     text-transform: none;
   }
