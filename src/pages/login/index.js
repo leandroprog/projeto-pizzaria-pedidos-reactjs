@@ -1,18 +1,18 @@
 import React from 'react'
-import { Button, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
-import { Container } from './styles'
+import { Container, GitHubButton } from './styles'
 
 import { ReactComponent as Logo } from 'assets/logo-react-zzaria.svg'
 
 const Login = () => (
   <Container>
-    <Grid container direction='column' alignItems='center' spacing={5}>
+    <Grid container justify='center' spacing={5}>
       <Grid item>
-        <Logo />
+        <Logo style={{ width: '100%' }} />
       </Grid>
-      <Grid item>
-        <Button>Entrar com GitHub</Button>
+      <Grid item xs={12}>
+        <GitHubButton variant='contained' fullWidth>Entrar com GitHub</GitHubButton>
       </Grid>
     </Grid>
   </Container>
