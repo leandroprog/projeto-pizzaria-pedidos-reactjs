@@ -1,25 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Grid, Button } from '@material-ui/core'
-
 import { Container, GitHubButton } from './styles'
-
-import firebase from 'firebase'
-
+import firebase from 'services/firebase'
 import { ReactComponent as Logo } from 'assets/logo-react-zzaria.svg'
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyDVj5h0WspihtzXgi5AwmB0U7Blgy_h0-k',
-  authDomain: 'projeto-pizzaria-126f6.firebaseapp.com',
-  databaseURL: 'https://projeto-pizzaria-126f6.firebaseio.com',
-  projectId: 'projeto-pizzaria-126f6',
-  storageBucket: 'projeto-pizzaria-126f6.appspot.com',
-  messagingSenderId: '976720996792',
-  appId: '1:976720996792:web:534f908676c96ddb65474d',
-  measurementId: 'G-QN8FQ0TFR6'
-}
-
-firebase.initializeApp(firebaseConfig)
-firebase.analytics()
 
 const Login = () => {
   const [user, setUser] = useState(null)
