@@ -24,25 +24,14 @@ function App ({ location }) {
   }, [logout, setUser])
 
   if (!didCheckUserIn) {
-    return <h1>Carregando</h1>
+    return <LinearProgress />
   }
 
-  if (user) {
-    console.log('usuário logado')
-    // eslint-disable-next-line react/prop-types
-    if (location.pathname === '/login') {
-      console.log('usuário logado e está na página de login')
-      return <Redirect to='/' />
-    } else {
-      console.log('Está logado mas não está na página de login')
-    }
-  } else {
-    console.log('Deslogado')
-    if (location.pathname !== '/login') {
-      return <Redirect to='/login' />
-    } else {
-      console.log('Não está logado e está na página de login')
-    }
+  if (user && location.pathname === '/login') {
+    return <Redirect to='/' />
+  }
+  if (!user && location.pathname !== '/login') {
+    return <Redirect to='/login' />
   }
 
   return (
