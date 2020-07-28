@@ -1,24 +1,18 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-
-const routes = [
-    { path: '/rota1', content: 'Rota 1'},
-    { path: '/rota2', content: 'Rota 2'}
-]
+import React from 'react'
+import { AppBar, Toolbar, IconButton } from '@material-ui/core'
+import { ReactComponent as Logo } from 'assets/logo-react-zzaria.svg'
 
 const Main = () => (
-    <>
-        <h1>Main</h1>
-        <Switch>
-            {routes.map(route => (
-                <Route 
-                    key={route.path} 
-                    path={route.path}
-                    render={() => <h2>{route.content}</h2>}
-                />
-            ))}
-        </Switch>
-    </>
-);
+  <AppBar>
+    <Toolbar>
+      <Logo />
+      <IconButton color='inherit'>
+        <span className='material-icons'>
+          account_circle
+        </span>
+      </IconButton>
+    </Toolbar>
+  </AppBar>
+)
 
-export default Main;
+export default Main
