@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Toolbar as MaterialToolbar, Divider as MaterialDivider, Paper, Typography } from '@material-ui/core'
+import { Toolbar as MaterialToolbar, Divider as MaterialDivider, Paper, Typography, Grid } from '@material-ui/core'
 
 import { ReactComponent as logo } from 'assets/logo-react-zzaria.svg'
 
@@ -38,6 +38,7 @@ export const PaperPizza = styled(Paper)`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+  min-width: 250px;
 `
 
 export const Pizza = styled.div`
@@ -80,4 +81,16 @@ export const PizzaText = styled(Typography).attrs({
   align-items: center;
   position: relative;
   z-index: 1;
+`
+export const PizzaGrid = styled(Grid).attrs({
+  container: true,
+  spacing: 4
+})`
+padding: 20px;
+`
+
+export const Title = styled(Typography).attrs({
+  gutterBottom: true,
+  align: 'center'
+})`
 `
