@@ -12,7 +12,7 @@ import {
 
 import { AuthContext } from 'contexts/auth'
 
-import { Conteiner, LogoContainer, Logo, Toolbar, Divider, PaperPizza } from './styles'
+import { Conteiner, LogoContainer, Logo, Toolbar, Divider, PaperPizza, Pizza, PizzaText } from './styles'
 
 const Spacer = withStyles((theme) => ({
   main: theme.mixins.toolbar
@@ -64,7 +64,7 @@ const Main = () => {
           {pizzaSizes.map((pizza) => (
             <Grid item key={pizza.id} xs={4}>
               <PaperPizza>
-                <div>{pizza.size}</div>
+                <Pizza><PizzaText>{pizza.size}cm</PizzaText></Pizza>
                 <Divider />
                 <Typography variant='h5'>{pizza.name}</Typography>
                 <Typography>{pizza.slices} fatias, {pizza.flavours} sabores</Typography>
