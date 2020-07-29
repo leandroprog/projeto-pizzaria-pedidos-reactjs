@@ -67,7 +67,10 @@ const Main = () => {
                 <Pizza><PizzaText>{pizza.size}cm</PizzaText></Pizza>
                 <Divider />
                 <Typography variant='h5'>{pizza.name}</Typography>
-                <Typography>{pizza.slices} fatias, {pizza.flavours} sabores</Typography>
+                <Typography>{pizza.slices} {singularOrPlural(pizza.flavours, 'fatia', 'fatias')}, {' '}
+                  {pizza.flavours} {' '}
+                  {singularOrPlural(pizza.flavours, 'sabor', 'sabores')}
+                </Typography>
               </PaperPizza>
             </Grid>
           ))}
@@ -75,6 +78,10 @@ const Main = () => {
       </Conteiner>
     </>
   )
+}
+
+function singularOrPlural (amount, singular, plural) {
+  return amount === 1 ? singular : plural
 }
 
 const pizzaSizes = [{
