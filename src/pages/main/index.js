@@ -29,7 +29,10 @@ const Main = () => {
             account_circle
           </span>
         </IconButton>
-        <Menu open={!!anchorElement} onClose={handleClose}>
+        <Menu
+          open={!!anchorElement} onClose={handleClose}
+          anchorEl={anchorElement}
+        >
           <MenuItem onClick={logout}>Sair</MenuItem>
         </Menu>
       </Toolbar>
