@@ -16,7 +16,10 @@ function App ({ location }) {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       console.log('usuário logado', user)
-      setUser(user)
+      setUser(user && {
+        ...user,
+        firstName: user.displayName.split(' ')[0]
+      })
       setDidCheckUserIn(true)
     })
 

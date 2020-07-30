@@ -20,7 +20,6 @@ const Spacer = withStyles((theme) => ({
 const Header = () => {
   const [anchorElement, setAnchorElement] = useState(null)
   const { logout, user } = useContext(AuthContext)
-  const userName = user.displayName.split(' ')[0]
 
   const handleOpenMenu = useCallback((e) => {
     setAnchorElement(e.target)
@@ -37,7 +36,7 @@ const Header = () => {
           <LogoContainer>
             <Logo />
           </LogoContainer>
-          <Typography color='inherit'>Olá {userName} =)</Typography>
+          <Typography color='inherit'>Olá {user.firstName} =)</Typography>
           <IconButton color='inherit' onClick={handleOpenMenu}>
             <span className='material-icons'>account_circle</span>
           </IconButton>
