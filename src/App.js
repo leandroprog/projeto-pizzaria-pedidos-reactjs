@@ -10,7 +10,7 @@ const MainPage = lazy(() => import('pages/main'))
 const Login = lazy(() => import('pages/login'))
 
 function App ({ location }) {
-  const { user, setUser, logout } = useContext(AuthContext)
+  const { user, setUser } = useContext(AuthContext)
   const [didCheckUserIn, setDidCheckUserIn] = useState(false)
 
   useEffect(() => {
@@ -22,9 +22,7 @@ function App ({ location }) {
       })
       setDidCheckUserIn(true)
     })
-
-    window.logout = logout
-  }, [logout, setUser])
+  }, [setUser])
 
   if (!didCheckUserIn) {
     return <LinearProgress />
