@@ -6,6 +6,8 @@ import firebase from 'services/firebase'
 
 import { AuthContext } from 'contexts/auth'
 
+import { HOME, LOGIN } from 'routes'
+
 const MainPage = lazy(() => import('pages/main'))
 const Login = lazy(() => import('pages/login'))
 
@@ -15,7 +17,6 @@ function App ({ location }) {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log('usuário logado', user)
       setUser(user && {
         ...user,
         firstName: user.displayName.split(' ')[0]
@@ -28,18 +29,18 @@ function App ({ location }) {
     return <LinearProgress />
   }
 
-  if (user && location.pathname === '/login') {
-    return <Redirect to='/' />
+  if (user && location.pathname === LOGIN) {
+    return <Redirect to={HOME} />
   }
-  if (!user && location.pathname !== '/login') {
-    return <Redirect to='/login' />
+  if (!user && location.pathname !== LOGIN) {
+    return <Redirect to={LOGIN} />
   }
 
   return (
     <>
       <Suspense fallback={<LinearProgress />}>
         <Switch>
-          <Route path='/login' component={Login} />
+          <Route path={LOGIN} component={Login} />
           <Route component={MainPage} />
         </Switch>
       </Suspense>
@@ -48,7 +49,7 @@ function App ({ location }) {
   )
 }
 
-App.prototypes = {
+App.propTypes = {
   location: t.object.isRequired
 }
 
