@@ -1,58 +1,22 @@
-import React, { useState, useCallback, useContext } from 'react'
+import React, { useContext } from 'react'
 import {
-  AppBar,
-  IconButton,
   Typography,
-  Menu,
-  MenuItem,
-  Grid,
-  withStyles
-
+  Grid
 } from '@material-ui/core'
 
 import { AuthContext } from 'contexts/auth'
 
-import { Conteiner, LogoContainer, Logo, Toolbar, Divider, PizzaGrid, PaperPizza, Pizza, PizzaText, Title } from './styles'
+import { Conteiner, Divider, PizzaGrid, PaperPizza, Pizza, PizzaText, Title } from './styles'
 
-const Spacer = withStyles((theme) => ({
-  main: theme.mixins.toolbar
-}))(({ classes }) => <div className={classes.main} />)
+import Header from 'components/Header'
 
 const Main = () => {
-  const [anchorElement, setAnchorElement] = useState(null)
-  const { logout, user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const userName = user.displayName.split(' ')[0]
-  const handleOpenMenu = useCallback((e) => {
-    setAnchorElement(e.target)
-  }, [])
-
-  const handleClose = useCallback(() => {
-    setAnchorElement(null)
-  }, [])
 
   return (
     <>
-      <AppBar>
-        <Toolbar>
-          <LogoContainer>
-            <Logo />
-          </LogoContainer>
-          <Typography color='inherit'>Olá {userName} =)</Typography>
-          <IconButton color='inherit' onClick={handleOpenMenu}>
-            <span className='material-icons'>account_circle</span>
-          </IconButton>
-          <Menu
-            open={!!anchorElement}
-            onClose={handleClose}
-            anchorEl={anchorElement}
-          >
-            <MenuItem onClick={logout}>Sair</MenuItem>
-          </Menu>
-        </Toolbar>
-      </AppBar>
-
-      <Spacer />
-
+      <Header />
       <Conteiner>
         <Grid container direction='column' alignItems='center'>
 
