@@ -7,21 +7,24 @@ import {
 
 import { AuthContext } from 'contexts/auth'
 
-import { Divider, PizzaGrid, Pizza, PizzaText, Title, CardActionArea } from './styles'
+import { Divider, PizzaGrid, Pizza, PizzaText, CardActionArea } from './styles'
 import pizzaSizes from 'fake-data/pizza-sizes'
 
+import { H3, H4, HeaderContent } from 'components/ui'
+
 import { CHOOSE_PIZZA_FLAVOURS } from 'routes'
+
+import { singularOrPlural } from 'utils'
 
 const ChoosePizzaSize = () => {
   const { user } = useContext(AuthContext)
 
   return (
     <>
-      <Grid container direction='column' alignItems='center'>
-
-        <Title variant='h3'>O vai ser hoje, {user.firstName} =)</Title>
-        <Title variant='h4'>Escolha o tamanho da pizza</Title>
-      </Grid>
+      <HeaderContent>
+        <H3>O vai ser hoje, {user.firstName} =)</H3>
+        <H4 variant='h4'>Escolha o tamanho da pizza</H4>
+      </HeaderContent>
 
       <PizzaGrid container spacing={2}>
         {pizzaSizes.map((pizza) => (
@@ -46,10 +49,6 @@ const ChoosePizzaSize = () => {
       </PizzaGrid>
     </>
   )
-}
-
-function singularOrPlural (amount, singular, plural) {
-  return amount === 1 ? singular : plural
 }
 
 export default ChoosePizzaSize

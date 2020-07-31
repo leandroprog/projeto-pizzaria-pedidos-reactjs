@@ -71,8 +71,3 @@ export const PizzaGrid = styled(Grid).attrs({
 })`
 padding: 20px;
 `
-
-export const Title = styled(Typography).attrs({
-  gutterBottom: true,
-  align: 'center'
-})``
