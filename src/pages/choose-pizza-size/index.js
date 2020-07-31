@@ -7,10 +7,10 @@ import {
 
 import { AuthContext } from 'contexts/auth'
 
-import { Divider, PizzaGrid, Pizza, PizzaText, CardActionArea } from './styles'
+import { Pizza, PizzaText, CardActionArea } from './styles'
 import pizzaSizes from 'fake-data/pizza-sizes'
 
-import { H3, H4, HeaderContent } from 'components/ui'
+import { H3, H4, HeaderContent, PizzaGrid, Divider } from 'components/ui'
 
 import { CHOOSE_PIZZA_FLAVOURS } from 'routes'
 
